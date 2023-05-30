@@ -2,11 +2,11 @@
 @section('title', 'Halaman Detail')
 @section('content')
     <div class="container-fluid mt-3" style="width: 90vw">
-        <p class="text-decoration-underline fw-semibold">TITLE</p>
+        <p class="text-decoration-underline fw-semibold">IT REALLY COUNTS</p>
         <h1>{{ $post->title }}</h1>
         <p>{{ $post->description }}</p>
         <small>By {{ $post->author->name }} | {{ $post->postDate }}</small>
-        <div>{{ $post->readTime }}</div>
+        <small class="text-secondary">{{ $post->readTime }}</small>
 
         <img src="{{ $post->image }}" alt="{{ $post->title }}" class="container-fluid" style="width: 100%; height: 30vw">
         <div class="mb-4 ms-2">
