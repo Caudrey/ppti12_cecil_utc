@@ -17,12 +17,13 @@ return new class extends Migration
             $table->id();
             $table->foreignId('author_id')->references('id')->on('authors')->onDelete('cascade')->onUpdate('cascade');
             $table->string('title');
-            $table->string('description');
+            $table->text('description');
             $table->text('bodyPost');
             $table->date('postDate');
             $table->string('video');
             $table->string('image');
             $table->string('readTime');
+            $table->dateTime('latestreview');
             $table->integer('like')->default(0);
             $table->timestamps();
         });

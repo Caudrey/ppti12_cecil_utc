@@ -7,15 +7,17 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function home(){
+    public function index(){
+        $highlight = Post::orderBy('like', 'desc')->first();
+        $latest = Post::orderBy('latestreview', 'desc')->limit(4)->get();
         $posts = Post::all();
 
-        return view('home', compact('posts'));
+        return view('home', compact('highlight', 'latest', 'posts'));
     }
 
-    public function detail($id){
+    public function show($id){
         $post = Post::find($id);
 
-        return view('home', compact('post'));
+        return view('detail', compact('post'));
     }
 }

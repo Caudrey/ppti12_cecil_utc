@@ -28,6 +28,7 @@ class PostSeeder extends Seeder
                 'video' => $faker->sentence() .'mp4',
                 'image' => $faker->imageUrl(640, 480),
                 'readTime' => $faker->randomElement(['Long Reads', 'Medium Reads', 'Quick Reads']),
+                'latestreview' => $faker->dateTime(),
                 'like' => mt_rand(0, 100)
             ]);
         }

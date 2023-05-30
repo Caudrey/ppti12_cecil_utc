@@ -18,7 +18,10 @@ use App\Http\Controllers\PostController;
 //     return view('welcome');
 // });
 
-Route::get('/', [PostController::class, 'home']);
-Route::get('/home', [PostController::class, 'home']);
-Route::get('/post/{id}', [PostController::class, 'detail']);
+Route::get('/', [PostController::class, 'index']);
+Route::get('/home', [PostController::class, 'index']);
+Route::get('/test', function () {
+    return view('test');
+});
+Route::get('/post/{id}', [PostController::class, 'show']);
 
